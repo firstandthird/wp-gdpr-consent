@@ -51,6 +51,8 @@
       item();
     });
 
+    pendingTracks = [];
+
     cb();
   }
 
