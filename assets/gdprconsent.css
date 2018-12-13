@@ -1,0 +1,11 @@
+.gdprconsent-container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.8);
+  color: #fff;
+  z-index: 9999;
+  text-align: center;
+}

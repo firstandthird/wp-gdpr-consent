@@ -1,0 +1,28 @@
+#!/bin/bash
+
+CMD=$1
+shift
+
+if [[ -z "$CMD" ]]; then
+  docker-compose up --build
+  exit
+fi
+
+if [[ "$CMD" == "generate-package" ]]; then
+  echo "Creating zip archive"
+  if [ -e "./tmp" ]; then
+    rm -r ./tmp
+  fi
+  if [ -e "./wp-gdpr-consent.zip" ]; then
+    rm ./wp-gdpr-consent.zip
+  fi
+
+  mkdir -p ./tmp
+  cp ./wp-gdpr-consent.php ./tmp
+  cp -r ./assets ./tmp
+  cp -r ./inc ./tmp
+  cd ./tmp && zip -r ../wp-gdpr-consent.zip .
+  exit 0
+fi
+
+docker-compose $@
