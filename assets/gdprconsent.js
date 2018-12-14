@@ -1,6 +1,7 @@
 (function() {
   var currentCookie = getCookie('gdprconsent');
   var pendingTracks = [];
+  var consentBar;
 
   function getCookie(name) {
     var nameEQ = `${name}=`;
@@ -59,7 +60,7 @@
   window.gdprSafeTrack = safeTrack;
 
   document.addEventListener("DOMContentLoaded", function(event) {
-    var consentBar = document.getElementById('GDPRConsentBar');
+    consentBar = document.getElementById('GDPRConsentBar');
 
     // Bar not loaded, bail out
     if (!consentBar) {

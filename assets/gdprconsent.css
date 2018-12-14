@@ -4,8 +4,42 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.9);
   color: #fff;
-  z-index: 9999;
+  z-index: 99999999;
   text-align: center;
+  font-family: Helvetica,Arial,sans-serif !important;
+}
+
+.gdprconsent-wrapper {
+  padding: 20px 60px;
+}
+
+.gdprconsent-wrapper p {
+  margin: 0;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.gdprconsent-wrapper button {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 10px 1px;
+  height: auto;
+  line-height: 26px;
+  white-space: no-wrap;
+  margin: 0 10px;
+  border: 1px solid;
+  border-color: #0073aa #006799 #006799;
+  border-radius: 3px;
+  color: #fff;
+  background: #0085ba;
+  box-shadow: 0 1px 0 #006799;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+}
+
+.gdprconsent-wrapper button:hover {
+  background: #008ec2;
+  border-color: #006799;
 }

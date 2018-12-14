@@ -12,8 +12,14 @@ function gdprconsent_banner_output() {
 
   ?>
   <div class="gdprconsent-container" id="GDPRConsentBar">
-    <p><?php echo wp_kses_post($copy); ?></p>
-    <button type="button"><?php echo esc_html($cta); ?></button>
+    <div class="gdprconsent-wrapper">
+      <div class="gdprconsent-content">
+        <p><?php echo wp_kses_post($copy); ?></p>
+      </div>
+      <div class="gdprconsent-button">
+        <button type="button"><?php echo esc_html($cta); ?></button>
+      </div>
+    </div>
   </div>
   <?php
 }
