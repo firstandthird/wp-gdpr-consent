@@ -75,7 +75,7 @@
     setTimeout(function() {
       document.addEventListener('click', grantConsent);
       document.addEventListener('scroll', grantConsent);
-    }, 500);
+    }, 2000);
   });
 
 }());
