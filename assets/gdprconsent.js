@@ -39,7 +39,7 @@
 
   function grantConsent(event) {
     if (event.type === 'scroll') {
-      if (Math.abs(lastScroll - window.scrollY) < scrollDelay) {
+      if (Math.abs(scrollStart - window.scrollY) < scrollDelay) {
         return;
       }
     }
