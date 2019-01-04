@@ -3,7 +3,7 @@
  * Plugin Name: GDPR Consent
  * Plugin URI: https://github.com/firstandthird/wp-gdpr-consent
  * Description: A consent banner that blocks GA and FB pixels until the user has consented
- * Version: 0.0.0
+ * Version: 0.0.1
  * Author: First and Third
  *
  * @package gdprconsent
