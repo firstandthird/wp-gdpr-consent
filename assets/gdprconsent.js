@@ -2,6 +2,8 @@
   var currentCookie = getCookie('gdprconsent');
   var pendingTracks = [];
   var consentBar;
+  var scrollStart = 0;
+  var scrollDelay = 75;
 
   function getCookie(name) {
     var nameEQ = `${name}=`;
@@ -36,6 +38,12 @@
   }
 
   function grantConsent(event) {
+    if (event.type === 'scroll') {
+      if (Math.abs(lastScroll - window.scrollY) < scrollDelay) {
+        return;
+      }
+    }
+
     event.currentTarget.removeEventListener('click', grantConsent);
     event.currentTarget.removeEventListener('scroll', grantConsent);
     setCookie('gdprconsent', 'consent');
@@ -73,9 +81,10 @@
 
     // Delay to prevent immediate acceptance if page is loaded with a hash anchor
     setTimeout(function() {
+      scrollStart = window.scrollY;
       document.addEventListener('click', grantConsent);
       document.addEventListener('scroll', grantConsent);
-    }, 2000);
+    }, 500);
   });
 
 }());

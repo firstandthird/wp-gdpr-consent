@@ -18,13 +18,6 @@ function gdprconsent_settings_init(  ) {
 		'gdprconsent'
 	);
 
-  add_settings_section(
-		'gdprconsent_pluginPage_ga_section',
-		__('Google Analytics', 'gdprconsent'),
-		'__return_empty_string',
-		'gdprconsent'
-	);
-
 	add_settings_field(
 		'consent-copy',
 		__('Consent', 'gdprconsent'),
