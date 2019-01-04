@@ -9,7 +9,6 @@ function gdprconsent_add_admin_menu() {
 
 function gdprconsent_settings_init(  ) {
 	register_setting('gdprconsent', 'gdprconsent_copy');
-	register_setting('gdprconsent', 'gdprconsent_cta');
 
 	add_settings_section(
 		'gdprconsent_pluginPage_copy_section',
@@ -25,14 +24,6 @@ function gdprconsent_settings_init(  ) {
 		'gdprconsent',
 		'gdprconsent_pluginPage_copy_section'
 	);
-
-  add_settings_field(
-		'consent-cta',
-		__('CTA Button', 'gdprconsent'),
-		'gdprconsent_field_cta_render',
-		'gdprconsent',
-		'gdprconsent_pluginPage_copy_section'
-	);
 }
 
 
@@ -41,14 +32,6 @@ function gdprconsent_field_consent_copy_render() {
 	$option = get_option('gdprconsent_copy', $default_copy);
 	?>
 	<textarea cols='40' rows='5' name='gdprconsent_copy'><?php echo esc_textarea($option); ?></textarea>
-	<?php
-}
-
-function gdprconsent_field_cta_render() {
-  $default_cta = __('I Agree', 'gdprconsent');
-	$option = get_option('gdprconsent_cta', $default_cta);
-	?>
-	<input type='text' name='gdprconsent_cta' value='<?php echo esc_attr($option); ?>'>
 	<?php
 }
 
