@@ -5,6 +5,31 @@
   var scrollStart = 0;
   var scrollDelay = 75;
 
+  // IE9 polyfill
+  // adapted from https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+  if (!Element.prototype.closest) {
+    if (!Element.prototype.matches) {
+      Element.prototype.matches = Element.prototype.msMatchesSelector;
+    }
+
+    if (!Element.prototype.matches) {
+      // Fallback in case browser is really old
+      Element.prototype.closest = function(s) {
+        return null;
+      };
+    } else {
+      Element.prototype.closest = function(s) {
+        var el = this;
+        if (!document.documentElement.contains(el)) return null;
+        do {
+          if (el.matches(s)) return el;
+          el = el.parentElement || el.parentNode;
+        } while (el !== null && el.nodeType === 1);
+        return null;
+      };
+    }
+  }
+
   function getCookie(name) {
     var nameEQ = `${name}=`;
     var split = document.cookie.split(';');
@@ -40,6 +65,14 @@
   function grantConsent(event) {
     if (event.type === 'scroll') {
       if (Math.abs(scrollStart - window.scrollY) < scrollDelay) {
+        return;
+      }
+    }
+
+    if (event.type === 'click') {
+      var target = event.target.closest('#GDPRConsentBar');
+
+      if (target) {
         return;
       }
     }
