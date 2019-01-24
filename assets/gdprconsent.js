@@ -81,10 +81,11 @@
     event.currentTarget.removeEventListener('scroll', grantConsent);
     setCookie('gdprconsent', 'consent');
     consentBar.style.display = 'none';
+    safeTrack();
   }
 
   function safeTrack(cb) {
-    if (currentCookie !== 'consent') {
+    if (currentCookie !== 'consent' && typeof cb === 'function') {
       pendingTracks.push(cb);
       return;
     }
@@ -95,7 +96,9 @@
 
     pendingTracks = [];
 
-    cb();
+    if (typeof cb === 'function') {
+      cb();
+    }
   }
 
   window.gdprSafeTrack = safeTrack;
