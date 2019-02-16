@@ -1,9 +1,11 @@
 (function() {
-  var currentCookie = getCookie('gdprconsent');
-  var pendingTracks = [];
-  var consentBar;
-  var scrollStart = 0;
-  var scrollDelay = 75;
+  // IE < 9 Polyfill
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+  if (!Array.isArray) {
+    Array.isArray = function (arg) {
+      return Object.prototype.toString.call(arg) === '[object Array]';
+    };
+  }
 
   // IE9 polyfill
   // adapted from https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
@@ -14,11 +16,11 @@
 
     if (!Element.prototype.matches) {
       // Fallback in case browser is really old
-      Element.prototype.closest = function(s) {
+      Element.prototype.closest = function (s) {
         return null;
       };
     } else {
-      Element.prototype.closest = function(s) {
+      Element.prototype.closest = function (s) {
         var el = this;
         if (!document.documentElement.contains(el)) return null;
         do {
@@ -29,6 +31,19 @@
       };
     }
   }
+
+  var currentCookie = getCookie('gdprconsent');
+  var pendingTracks = [
+    // Adds support for Google Tag Manager
+    function() {
+      if (window.dataLayer && Array.isArray(window.dataLayer)) {
+        window.dataLayer.push({ 'event': 'cookieConsent' });
+      }
+    }
+  ];
+  var consentBar;
+  var scrollStart = 0;
+  var scrollDelay = 75;
 
   function getCookie(name) {
     var nameEQ = `${name}=`;
