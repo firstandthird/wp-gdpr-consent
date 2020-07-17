@@ -1,3 +1,5 @@
 tmp
 wp-gdpr-consent.zip
 vendor
+node_modules
+yarn-error.log

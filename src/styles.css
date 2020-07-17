@@ -1,0 +1,75 @@
+.gdprconsent {
+  $background: rgba(0,0,0,.9);
+  $fontSize: 14px;
+  $primaryFontColor: #fff;
+  $fontFamily: Helvetica,Arial,sans-serif;
+  $contentPadding: 20px 40px;
+  $buttonBackground: #fff;
+  $buttonFontColor: #000;
+  $buttonPadding: 10px;
+  $breakpoint: 999px; /* Default wordpress breakpoint */
+
+  &-container {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $background;
+    color: $primaryFontColor;
+    z-index: 99999999;
+    text-align: center;
+    font-family: $fontFamily;
+  }
+
+  &-content {
+    padding: $contentPadding;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @media(max-width: $breakpoint) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+      &:hover,
+      &:focus {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: $fontSize;
+      font-weight: normal;
+      flex-grow: 1;
+    }
+
+    .gdprconsent-button {
+      display: flex;
+      flex-shrink: 0;
+
+      button {
+        display: inline-block;
+        margin-left: 40px;
+        font-family: $fontFamily;
+        background-color: $buttonBackground;
+        color: $buttonFontColor;
+        padding: $buttonPadding;
+        font-size: $fontSize;
+        text-transform: none;
+
+        @media(max-width: $breakpoint) {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

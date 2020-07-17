@@ -52,6 +52,20 @@ Install wordpress.
 
 Activate plugin.
 
+`yarn install`
+
+`yarn dev`
+
+### Debug
+
+These hashes can be used to help debug:
+
+ - `#gdpr-debug` - Logs out some useful information including when safe track callbacks are fired
+ - `#gdpr-debug-clean` - Same as above but does not used stored cookie.
+ - `#gdpr-debug-cookies` - Outputs any cookies set after 10 seconds.
+
+Note: clean and cookies may be combined together: `gdpr-debug-clean-cookies`
+
 ### Creating plugin zip
 
 `./run generate-package`

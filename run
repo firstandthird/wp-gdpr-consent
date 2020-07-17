@@ -18,8 +18,10 @@ if [[ "$CMD" == "generate-package" ]]; then
   fi
 
   mkdir -p ./tmp
+  yarn install
+  yarn build
   cp ./wp-gdpr-consent.php ./tmp
-  cp -r ./assets ./tmp
+  cp -r ./dist ./tmp
   cp -r ./inc ./tmp
   cd ./tmp && zip -r ../wp-gdpr-consent.zip .
   exit 0
