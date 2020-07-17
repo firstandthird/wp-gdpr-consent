@@ -64,6 +64,7 @@
         padding: $buttonPadding;
         font-size: $fontSize;
         text-transform: none;
+        border: 0;
 
         @media(max-width: $breakpoint) {
           margin-left: 0;
