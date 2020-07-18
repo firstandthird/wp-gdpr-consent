@@ -42,6 +42,14 @@ if (window.gdprSafeTrack) {
 }
 ```
 
+You can also use `window.gdprSafeTrack` to load scripts once consent has been granted:
+
+```html
+<script>
+  window.gdprSafeTrack('https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxxxx-x');
+</script>
+```
+
 ### Dev setup
 
 `./run`
