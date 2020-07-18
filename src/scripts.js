@@ -69,6 +69,19 @@ class GDPRConsent {
   }
 
   safeTrack(callback) {
+    // handle creating scripts
+    if (typeof callback === 'string') {
+      this.safeTrack(() => {
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = callback;
+        const firstScript = findOne('script');
+        firstScript.parentNode.insertBefore(script, firstScript);
+      });
+      return;
+    }
+
     if (this.currentCookie !== 'consent' && typeof callback === 'function') {
       this.log({
         message: 'Callback queued pending consent',
