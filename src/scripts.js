@@ -113,4 +113,4 @@ class GDPRConsent {
 
 const gdpr = new GDPRConsent();
 
-window.gdprSafeTrack = gdpr.safeTrack;
+window.gdprSafeTrack = gdpr.safeTrack.bind(gdpr);
