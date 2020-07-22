@@ -1,0 +1,24 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": "error",
+    "comma-dangle": ["error", "never"],
+    "no-plusplus": "off",
+    "object-curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "arrow-parens": ["error", "as-needed"],
+    "curly": ["error", "all"],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }]
+  }
+}

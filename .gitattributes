@@ -1,0 +1,4 @@
+dist/*.css -diff
+dist/*.js -diff
+composer.lock -diff
+yarn.lock -diff

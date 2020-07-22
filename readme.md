@@ -42,6 +42,14 @@ if (window.gdprSafeTrack) {
 }
 ```
 
+You can also use `window.gdprSafeTrack` to load scripts once consent has been granted:
+
+```html
+<script>
+  window.gdprSafeTrack('https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxxxx-x');
+</script>
+```
+
 ### Dev setup
 
 `./run`
@@ -51,6 +59,20 @@ Open browser: http://localhost:8080
 Install wordpress.
 
 Activate plugin.
+
+`yarn install`
+
+`yarn dev`
+
+### Debug
+
+These hashes can be used to help debug:
+
+ - `#gdpr-debug` - Logs out some useful information including when safe track callbacks are fired
+ - `#gdpr-debug-clean` - Same as above but does not used stored cookie.
+ - `#gdpr-debug-cookies` - Outputs any cookies set after 10 seconds.
+
+Note: clean and cookies may be combined together: `gdpr-debug-clean-cookies`
 
 ### Creating plugin zip
 

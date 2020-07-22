@@ -1,0 +1,55 @@
+{
+  "name": "wp-gdpr-consent",
+  "version": "2.0.0",
+  "description": "A consent banner that blocks GA and FB pixels until the user has consented",
+  "private": true,
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "scripts": {
+    "build": "webpack --mode=production --config webpack.config.js",
+    "dev": "webpack --mode=development --watch --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firstandthird/wp-gdpr-consent.git"
+  },
+  "author": "First and Third",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/firstandthird/wp-gdpr-consent/issues"
+  },
+  "homepage": "https://github.com/firstandthird/wp-gdpr-consent#readme",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "autoprefixer": "^9.8.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "precss": "^4.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-fix-style-only-entries": "^0.5.1"
+  },
+  "dependencies": {
+    "@firstandthird/cookie-monster": "^3.2.0",
+    "domassist": "^2.2.0"
+  }
+}
