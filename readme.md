@@ -6,6 +6,12 @@ This plugin has already been approved by Wordpress for use in VIP installations.
 
 ### Installing on VIP GO
 
+Subtree
+```shell
+git subtree add --prefix plugins/wp-gdpr-consent https://github.com/firstandthird/wp-gdpr-consent 2.0.0 --squash
+```
+
+Submodule
 ```shell
 git submodule add https://github.com/firstandthird/wp-gdpr-consent.git plugins/wp-gdpr-consent
 ```
@@ -24,7 +30,7 @@ Activate the plugin.
 
 ### First use
 
-Go to Settings » GDPR Consent
+Go to Settings Â» GDPR Consent
 
 Click save to set default text.
 
